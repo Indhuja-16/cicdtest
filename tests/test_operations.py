@@ -1,4 +1,4 @@
-from src.math_calculations import add, sub, mul
+from src.math_calculations import add, sub, mul,div,power
 
 def test_add():
     assert add(1,2)==3
@@ -17,3 +17,19 @@ def test_mul():
     assert mul(-1,1)==-1
     assert mul(0,5)==0
     assert mul(-2,-3)==6
+
+def test_div():
+    assert div(6,2)==3
+    assert div(-6,2)==-3
+    assert div(0,5)==0
+    try:
+        div(5,0)
+        assert False, "Expected ValueError"
+    except ValueError:
+        pass
+
+def test_power():
+    assert power(2,3)==8
+    assert power(-1,1)==-1
+    assert power(0,5)==0
+    assert power(-2,-3)==-0.125
